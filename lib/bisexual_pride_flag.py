@@ -1,5 +1,7 @@
 """
 Author: https://github.com/holychowders
+This file does not contain an infinite loop.
+To use as intended, control this under your own loop.
 """
 
 from adafruit_circuitplayground.express import cpx
@@ -8,12 +10,13 @@ from time import sleep
 
 def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
     """
-    Map bisexual pride flag to NeoPixels in horizontal/vertical configuration
-    with optional momentary glow. All arguments optional.
+    Map bisexual pride flag to NeoPixels in horizontal/vertical
+    configuration with optional momentary glow. All arguments optional.
     aspect takes 'horizontal' or 'vertical'; default 'horizontal'.
     glow takes bool; default False.
     glow_pause sets duration (seconds) of pause between momentary glow; default 10.
     """
+    
     GLOW_FADE_T = 0.025
 
     def map_pixels(bf=5):
@@ -45,9 +48,6 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
         sleep(glow_pause)
 
 
-    if glow == True:
-        run_with_glow()
-
-    elif glow == False:
-        map_pixels()
+    if glow: run_with_glow()
+    else: map_pixels()
         
