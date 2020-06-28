@@ -1,3 +1,3 @@
-# circuit_playground_express_projects
+# circuit_playground_express
 https://github.com/holychowders
 Personal CPX Projects
