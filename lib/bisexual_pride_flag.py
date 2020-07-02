@@ -11,7 +11,8 @@ from time import sleep
 def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
     """
     Map bisexual pride flag to NeoPixels in horizontal/vertical
-    configuration with optional momentary glow. All arguments optional.
+    configuration with optional momentary glow.
+    All arguments optional.
     aspect takes 'horizontal' or 'vertical'; default 'horizontal'.
     glow takes bool; default False.
     glow_pause sets duration (seconds) of pause between momentary glow; default 10.
@@ -49,5 +50,5 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
 
 
     if glow: run_with_glow()
-    else: map_pixels()
+    elif not glow: map_pixels()
         
