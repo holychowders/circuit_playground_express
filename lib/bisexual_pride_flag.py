@@ -50,5 +50,5 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
 
 
     if glow: run_with_glow()
-    elif not glow: map_pixels()
+    else: not glow: map_pixels()
         
