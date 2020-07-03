@@ -8,7 +8,7 @@ from adafruit_circuitplayground.express import cpx
 from time import sleep
 
 
-def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
+def run_bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
     """
     Map bisexual pride flag to NeoPixels in horizontal/vertical
     configuration with optional momentary glow.
@@ -17,7 +17,7 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
     glow takes bool; default False.
     glow_pause sets duration (seconds) of pause between momentary glow; default 10.
     """
-    
+
     GLOW_FADE_T = 0.025
 
     def map_pixels(bf=5):
@@ -25,7 +25,6 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
         Map NeoPixels according to aspect.
         Takes optional bf (brightness factor) to allow fading in run_with_glow; default 5.
         """
-
         if aspect == 'horizontal':
             cpx.pixels[0] = cpx.pixels[1] = cpx.pixels[9] = cpx.pixels[8] = (bf*5, 0, bf*2)
             cpx.pixels[2] = cpx.pixels[7] = (20, 0, 40)
@@ -50,5 +49,4 @@ def bi_pride_flag(aspect='horizontal', glow=False, glow_pause=10):
 
 
     if glow: run_with_glow()
-    else: not glow: map_pixels()
-        
+    else: map_pixels()
